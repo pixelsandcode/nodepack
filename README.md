@@ -12,3 +12,8 @@
 **npm run doc** generate docs
 **npm start** run the code
 **npm test** run tests and generate coverage report
+
+# Resources
+# Test Report https://travis-ci.org/pixelsandcode/nodepack
+# Coverage Report https://coveralls.io/github/pixelsandcode/nodepack
+# Documentation https://pixelsandcode.github.io/nodepack/src/index.html
