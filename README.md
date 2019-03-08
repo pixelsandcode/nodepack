@@ -1,5 +1,11 @@
 # Intro
-How to use, travis, mocha, chai, flow, coverall, istanbul, docco in one project
+Sample project to show how all projects should set up:
+- **mocha, chai, istanbull** code test and coverage report
+- **travis, coverall** CI/CD, automated test and coverage report
+- **flow** type check
+- **lint** code style (airbnb style)
+- **docco** in code documentation
+- **winston, rollbar** logging and exception report
 
 [![Build Status](https://travis-ci.org/pixelsandcode/nodepack.svg?branch=master)](https://travis-ci.org/pixelsandcode/nodepack)
 [![Coverage Status](https://coveralls.io/repos/github/pixelsandcode/nodepack/badge.svg)](https://coveralls.io/github/pixelsandcode/nodepack)
@@ -26,3 +32,6 @@ How to use, travis, mocha, chai, flow, coverall, istanbul, docco in one project
 - Test Report https://travis-ci.org/pixelsandcode/nodepack
 - Coverage Report https://coveralls.io/github/pixelsandcode/nodepack
 - Documentation https://pixelsandcode.github.io/nodepack/src/index.html
+
+# TODO
+- generate doc from tests or link tests to code doc

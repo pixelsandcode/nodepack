@@ -35,6 +35,13 @@
                   </a>
                 </li>
               
+                
+                <li>
+                  <a class="source" href="utilities/logger.html">
+                    src/utilities/logger.js
+                  </a>
+                </li>
+              
             </ol>
           </div>
         
@@ -52,6 +59,7 @@ code coverage and inline documentation, type checks.</p>
 
         
           <div class='highlight'><pre>
+<span class="hljs-keyword">import</span> logger <span class="hljs-keyword">from</span> <span class="hljs-string">'./utilities/logger'</span>;
 <span class="hljs-keyword">import</span> { Person } <span class="hljs-keyword">from</span> <span class="hljs-string">'./sub/species'</span>;</pre></div>
         
       
@@ -71,11 +79,16 @@ code coverage and inline documentation, type checks.</p>
         
       
         
-        <p>It is <strong>important</strong> to know we never show Jane’s age as she is sensitive!</p>
+        <p>It is <strong>important</strong> to know we never show Jane’s age as she is sensitive!
+Learn more reading at <a href="https://drive.google.com/file/d/1y0JkF2YrQl6jTxQAzvQd0uwi2586ODhQ/view?usp=sharing">https://drive.google.com/file/d/1y0JkF2YrQl6jTxQAzvQd0uwi2586ODhQ/view?usp=sharing</a></p>
 
         
           <div class='highlight'><pre>people.forEach(<span class="hljs-function">(<span class="hljs-params">value: Person</span>) =&gt;</span> {
-  <span class="hljs-keyword">if</span> (value.name !== <span class="hljs-string">'Jane'</span>) <span class="hljs-built_in">console</span>.log(value.info());
+  <span class="hljs-keyword">if</span> (value.name !== <span class="hljs-string">'Jane'</span>) {
+    <span class="hljs-built_in">console</span>.log(value.info());
+  } <span class="hljs-keyword">else</span> {
+    logger.error(<span class="hljs-string">'Jane will be pissed!'</span>);
+  }
 });</pre></div>
         
       

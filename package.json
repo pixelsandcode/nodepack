@@ -32,7 +32,10 @@
     "nyc": "^13.3.0"
   },
   "gh-pages-deploy": {
-    "staticpath": "docs",
-    "noprompt": false
+    "staticpath": "docs"
+  },
+  "dependencies": {
+    "winston": "^3.2.1",
+    "winston-transport-rollbar-3": "^3.0.1"
   }
 }
