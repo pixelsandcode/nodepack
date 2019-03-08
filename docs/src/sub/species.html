@@ -59,7 +59,7 @@ type PersonType = { <span class="hljs-attr">name</span>: string, <span class="hl
   age: number;
 
   info() {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.name, <span class="hljs-keyword">this</span>.age);
+    <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">${<span class="hljs-keyword">this</span>.name}</span> <span class="hljs-subst">${<span class="hljs-keyword">this</span>.age}</span>`</span>;
   }
 
   <span class="hljs-keyword">static</span> init({ name, age }: PersonType): Person {
@@ -72,6 +72,11 @@ type PersonType = { <span class="hljs-attr">name</span>: string, <span class="hl
 
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Pet</span> </span>{
   name: string;
+
+  <span class="hljs-keyword">static</span> bark(message: string) {
+    <span class="hljs-keyword">const</span> say = <span class="hljs-string">`woof woof, <span class="hljs-subst">${message}</span>`</span>;
+    <span class="hljs-keyword">return</span> say;
+  }
 }
 
 <span class="hljs-keyword">export</span> { Person, Pet };</pre></div>
