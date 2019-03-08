@@ -56,13 +56,17 @@
         
       
         
-        <p>Set up a logger which reports to rollbar on production errors <a href="https://rollbar.com/tectual/nodepack/">https://rollbar.com/tectual/nodepack/</a>
-and track development errors on console</p>
+        <p>We have 2 different log strategies based on environments:</p>
+<ul>
+<li>Production: only warnings are reported to rollbar <a href="https://rollbar.com/tectual/nodepack/">https://rollbar.com/tectual/nodepack/</a></li>
+<li>Other environments : All other logs are reported in console</li>
+</ul>
 
         
-          <div class='highlight'><pre><span class="hljs-keyword">const</span> rollbarConfig = {
+          <div class='highlight'><pre>
+<span class="hljs-keyword">const</span> rollbarConfig = {
   <span class="hljs-attr">accessToken</span>: <span class="hljs-string">'b54e1dd5aa354dc9a57904d33634984d'</span>,
-  <span class="hljs-attr">environment</span>: <span class="hljs-string">'production'</span>,
+  <span class="hljs-attr">environment</span>: process.env.NODE_ENV,
 };
 
 <span class="hljs-keyword">let</span> loggerInstance;
@@ -81,11 +85,7 @@ and track development errors on console</p>
     ],
   });
 } <span class="hljs-keyword">else</span> {
-  loggerInstance = createLogger({
-    <span class="hljs-attr">transports</span>: [
-      <span class="hljs-keyword">new</span> RollbarTransport({ rollbarConfig }),
-    ],
-  });
+  loggerInstance = createLogger({ <span class="hljs-attr">transports</span>: [<span class="hljs-keyword">new</span> RollbarTransport({ rollbarConfig })] });
 }
 
 <span class="hljs-keyword">const</span> logger = loggerInstance;
