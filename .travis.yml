@@ -1,5 +1,4 @@
 language: node_js
 node_js:
   - "11"
-scripts:
-  test: "npm run travis"
+script: "npm run travis"
