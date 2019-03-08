@@ -9,8 +9,8 @@
     "doc": "rm -fr ./docs && docco {src,test}/{**/*,*} -l linear",
     "start": "babel-node src/index.js",
     "build": "babel src/ -d lib/",
-    "test": "NODE_ENV=test nyc --reporter lcov --reporter text mocha --require babel-core/register tests/*",
-    "travis": "NODE_ENV=test nyc --reporter lcovonly mocha --require babel-core/register tests/* && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "test": "NODE_ENV=test nyc --reporter lcov --reporter text mocha --require babel-core/register tests/* && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "travis": "NODE_ENV=test nyc --reporter lcovonly --reporter text mocha --require babel-core/register tests/* && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "author": "",
   "license": "ISC",

@@ -1,3 +1,10 @@
+# Intro
+How to use, travis, mocha, chai, flow, coverall, istanbul, docco in one project
+
+[![Build Status](https://travis-ci.org/pixelsandcode/nodepack.svg?branch=master)](https://travis-ci.org/pixelsandcode/nodepack)
+[![Coverage Status](https://coveralls.io/repos/github/pixelsandcode/nodepack/badge.svg)](https://coveralls.io/github/pixelsandcode/nodepack)
+
+
 # Structure
 
 - src (source code of the project)
