@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>index.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="public/stylesheets/normalize.css" />
+  <link rel="stylesheet" media="all" href="../docco.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="page">
+
+      <div class="header">
+        
+          <h1>index.js</h1>
+        
+
+        
+          <div class="toc">
+            <h3>Table of Contents</h3>
+            <ol>
+              
+                
+                <li>
+                  <a class="source" href="index.html">
+                    src/index.js
+                  </a>
+                </li>
+              
+                
+                <li>
+                  <a class="source" href="sub/species.html">
+                    src/sub/species.js
+                  </a>
+                </li>
+              
+            </ol>
+          </div>
+        
+      </div>
+
+      
+        
+        <p>@flow</p>
+
+        
+      
+        
+        <p>This is a sample project to show how we can run lint, automated test,
+code coverage and inline documentation, type checks.</p>
+
+        
+          <div class='highlight'><pre>
+<span class="hljs-keyword">import</span> { Person } <span class="hljs-keyword">from</span> <span class="hljs-string">'./sub/species'</span>;</pre></div>
+        
+      
+        
+        <p>learn about <a href="./sub/species.html">species</a></p>
+
+        
+      
+        
+        <p>Jack should always born before Jane</p>
+
+        
+          <div class='highlight'><pre><span class="hljs-keyword">const</span> jack = Person.init({ <span class="hljs-attr">name</span>: <span class="hljs-string">'Jack'</span>, <span class="hljs-attr">age</span>: <span class="hljs-number">36</span> });
+<span class="hljs-keyword">const</span> jane = Person.init({ <span class="hljs-attr">name</span>: <span class="hljs-string">'Jane'</span>, <span class="hljs-attr">age</span>: <span class="hljs-number">30</span> });
+
+<span class="hljs-keyword">const</span> people: <span class="hljs-built_in">Array</span>&lt;Person&gt; = [jack, jane];</pre></div>
+        
+      
+        
+        <p>It is <strong>important</strong> to know we never show Jane’s age as she is sensitive!</p>
+
+        
+          <div class='highlight'><pre>people.forEach(<span class="hljs-function">(<span class="hljs-params">value: Person</span>) =&gt;</span> {
+  <span class="hljs-keyword">if</span> (value.name !== <span class="hljs-string">'Jane'</span>) value.info();
+});</pre></div>
+        
+      
+      <div class="fleur">h</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{
+  "name": "nodepack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "flow": "flow",
+    "doc": "rm -fr ./docs && docco {src,test}/{**/*,*} -l linear",
+    "start": "babel-node src/index.js",
+    "build": "babel src/ -d lib/",
+    "prepublish": "npm run build",
+    "test": "nyc --reporter lcov --reporter text mocha --require babel-core/register test/*"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^10.0.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-flow": "^6.23.0",
+    "chai": "^4.2.0",
+    "docco": "^0.8.0",
+    "eslint": "^5.15.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-flowtype": "^3.4.2",
+    "eslint-plugin-import": "^2.16.0",
+    "flow-bin": "^0.94.0",
+    "mocha": "^6.0.2",
+    "nyc": "^13.3.0"
+  }
+}
