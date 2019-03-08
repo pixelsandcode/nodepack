@@ -3,7 +3,7 @@ import RollbarTransport from 'winston-transport-rollbar-3';
 
 // We have 2 different log strategies based on environments:
 // * Production: only warnings are reported to rollbar https://rollbar.com/tectual/nodepack/
-// * Other environments : All other logs are reported in console
+// * Other environments : All logs are reported in console
 
 const rollbarConfig = {
   accessToken: 'b54e1dd5aa354dc9a57904d33634984d',
