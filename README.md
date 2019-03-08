@@ -10,10 +10,10 @@
 
 # Commands
 - **npm run doc** generate docs locally
-- **github-pages** generate docs locally and publish to github pages
+- **npm run github-pages** generate docs locally and publish to github pages
 - **npm start** run the code
 - **npm test** run tests locally and generate json, html coverage report
-- **travis** run tests in travis.ci and update coverall.io
+- **npm run travis** run tests in travis.ci and update coverall.io
 
 # Resources
 - Test Report https://travis-ci.org/pixelsandcode/nodepack
