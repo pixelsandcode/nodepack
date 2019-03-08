@@ -8,7 +8,8 @@
     "doc": "rm -fr ./docs && docco {src,test}/{**/*,*} -l linear",
     "start": "babel-node src/index.js",
     "build": "babel src/ -d lib/",
-    "test": "nyc --reporter lcov --reporter text mocha --require babel-core/register tests/*"
+    "test": "NODE_ENV=test nyc --reporter lcov --reporter text mocha --require babel-core/register tests/*",
+    "travis": "NODE_ENV=test nyc --reporter lcovonly mocha --require babel-core/register tests/* && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "author": "",
   "license": "ISC",
@@ -26,7 +27,6 @@
     "eslint-plugin-import": "^2.16.0",
     "flow-bin": "^0.94.0",
     "mocha": "^6.0.2",
-    "mocha-lcov-reporter": "^1.3.0",
     "nyc": "^13.3.0"
   }
 }
