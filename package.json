@@ -6,7 +6,7 @@
   "scripts": {
     "github-pages": "npm run doc && gh-pages-deploy",
     "flow": "flow",
-    "doc": "rm -fr ./docs && docco {src,test}/{**/*,*} -l linear",
+    "doc": "rm -fr ./docs && docco {src,test}/{**/*,*} README.md tutorials/{**/*,*} -t ./documentation/template/docco.jst -c ./documentation/template/docco.css && cp -r ./documentation/template/public ./docs",
     "start": "babel-node src/index.js",
     "build": "babel src/ -d lib/",
     "test": "NODE_ENV=test nyc --reporter lcov --reporter text mocha --require babel-core/register tests/* && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
