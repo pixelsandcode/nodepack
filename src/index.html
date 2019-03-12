@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>index.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="public/stylesheets/normalize.css" />
+  <link rel="stylesheet" media="all" href="../docco.css" />
+</head>
+<body>
+  <div class="container">
+    
+      <div class="toc">
+        <h3>Table of Contents</h3>
+        <ul>
+          
+          
+          
+            
+            
+            
+            
+            <li class="indent0">
+              <a class="source" href="../README.html">
+                README.md
+              </a>
+            </li>
+          
+            
+            
+            
+              
+              
+                
+                  <h4 class="indent0">misc/</h4>
+                
+              
+                
+                  <h4 class="indent1">tutorials/</h4>
+                
+              
+              
+            
+            
+            <li class="indent2">
+              <a class="source" href="../misc/tutorials/installation.html">
+                installation.md
+              </a>
+            </li>
+          
+            
+            
+            
+              
+              
+                
+                  <h4 class="indent0">src/</h4>
+                
+              
+              
+            
+            
+            <li class="indent1">
+              <a class="source" href="index.html">
+                index.js
+              </a>
+            </li>
+          
+            
+            
+            
+              
+              
+                
+              
+                
+                  <h4 class="indent1">sub/</h4>
+                
+              
+              
+            
+            
+            <li class="indent2">
+              <a class="source" href="sub/species.html">
+                species.js
+              </a>
+            </li>
+          
+            
+            
+            
+              
+              
+                
+              
+                
+                  <h4 class="indent1">utilities/</h4>
+                
+              
+              
+            
+            
+            <li class="indent2">
+              <a class="source" href="utilities/logger.html">
+                logger.js
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    
+    <div class="page">
+      <div class="header">
+        
+          <h1>index.js</h1>
+        
+      </div>
+
+      
+        
+        <p>@flow</p>
+
+        
+      
+        
+        <p>This is a sample project to show how we can run lint, automated test,
+code coverage and inline documentation, type checks.</p>
+
+        
+          <div class='highlight'><pre>
+<span class="hljs-keyword">import</span> logger <span class="hljs-keyword">from</span> <span class="hljs-string">'./utilities/logger'</span>;
+<span class="hljs-keyword">import</span> { Person } <span class="hljs-keyword">from</span> <span class="hljs-string">'./sub/species'</span>;</pre></div>
+        
+      
+        
+        <p>learn about <a href="./sub/species.html">species</a> or learn directly about <a href="./sub/species.html#pet">pet</a> which is in species too.</p>
+
+        
+      
+        
+        <p>Jack should always born before Jane</p>
+
+        
+          <div class='highlight'><pre><span class="hljs-keyword">const</span> jack = Person.init({ <span class="hljs-attr">name</span>: <span class="hljs-string">'Jack'</span>, <span class="hljs-attr">age</span>: <span class="hljs-number">36</span> });
+<span class="hljs-keyword">const</span> jane = Person.init({ <span class="hljs-attr">name</span>: <span class="hljs-string">'Jane'</span>, <span class="hljs-attr">age</span>: <span class="hljs-number">30</span> });
+
+<span class="hljs-keyword">const</span> people: <span class="hljs-built_in">Array</span>&lt;Person&gt; = [jack, jane];</pre></div>
+        
+      
+        
+        <p>It is <strong>important</strong> to know we never show Jane’s age as she is sensitive!
+Learn more reading at <a href="https://drive.google.com/file/d/1y0JkF2YrQl6jTxQAzvQd0uwi2586ODhQ/view?usp=sharing">https://drive.google.com/file/d/1y0JkF2YrQl6jTxQAzvQd0uwi2586ODhQ/view?usp=sharing</a></p>
+
+        
+          <div class='highlight'><pre>people.forEach(<span class="hljs-function">(<span class="hljs-params">value: Person</span>) =&gt;</span> {
+  <span class="hljs-keyword">if</span> (value.name !== <span class="hljs-string">'Jane'</span>) {
+    <span class="hljs-built_in">console</span>.log(value.info());
+  } <span class="hljs-keyword">else</span> {
+    logger.error(<span class="hljs-string">'Jane will be pissed!'</span>);
+  }
+});</pre></div>
+        
+      
+      <div class="fleur">h</div>
+    </div>
+  </div>
+</body>
+</html>
