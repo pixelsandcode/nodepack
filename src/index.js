@@ -5,7 +5,7 @@
 
 import logger from './utilities/logger';
 import { Person } from './sub/species';
-// learn about [species](./sub/species.html)
+// learn about [species](./sub/species.html) or learn directly about [pet](./sub/species.html#pet) which is in species too.
 
 // Jack should always born before Jane
 const jack = Person.init({ name: 'Jack', age: 36 });

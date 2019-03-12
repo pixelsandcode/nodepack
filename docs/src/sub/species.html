@@ -126,7 +126,8 @@ type PersonType = { <span class="hljs-attr">name</span>: string, <span class="hl
         
       
         
-        <p>Person and Pet can live together and there is no pet without a person</p>
+        <h2 id="person">Person</h2>
+<p>Person and Pet can live together and there is no pet without a person</p>
 
         
           <div class='highlight'><pre><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> </span>{
@@ -146,7 +147,32 @@ type PersonType = { <span class="hljs-attr">name</span>: string, <span class="hl
   }
 }
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Pet</span> </span>{
+<span class="hljs-keyword">const</span> uselessMethod = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  <span class="hljs-keyword">const</span> list = [];
+  list.push(<span class="hljs-string">'This'</span>);
+  list.push(<span class="hljs-string">'is'</span>);
+  list.push(<span class="hljs-string">'a'</span>);
+  list.push(<span class="hljs-string">'useless'</span>);
+  list.push(<span class="hljs-string">'method'</span>);
+  list.push(<span class="hljs-string">','</span>);
+  list.push(<span class="hljs-string">'to'</span>);
+  list.push(<span class="hljs-string">'make'</span>);
+  list.push(<span class="hljs-string">'some'</span>);
+  list.push(<span class="hljs-string">'gaps'</span>);
+  list.push(<span class="hljs-string">'in'</span>);
+  list.push(<span class="hljs-string">'this'</span>);
+  list.push(<span class="hljs-string">'file'</span>);
+  list.push(<span class="hljs-string">'!'</span>);
+  <span class="hljs-built_in">console</span>.log(list.join(<span class="hljs-string">' '</span>));
+};</pre></div>
+        
+      
+        
+        <h2 id="pet">Pet</h2>
+<p>direct link from index.js to Pet section is possible with HTML IDs.</p>
+
+        
+          <div class='highlight'><pre><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Pet</span> </span>{
   name: string;
 
   <span class="hljs-keyword">static</span> bark(message: string) {
@@ -155,7 +181,7 @@ type PersonType = { <span class="hljs-attr">name</span>: string, <span class="hl
   }
 }
 
-<span class="hljs-keyword">export</span> { Person, Pet };</pre></div>
+<span class="hljs-keyword">export</span> { Person, Pet, uselessMethod };</pre></div>
         
       
       <div class="fleur">h</div>

@@ -2,6 +2,7 @@
 
 type PersonType = { name: string, age: number };
 
+// ## Person
 // Person and Pet can live together and there is no pet without a person
 class Person {
   name: string;
@@ -20,6 +21,27 @@ class Person {
   }
 }
 
+const uselessMethod = () => {
+  const list = [];
+  list.push('This');
+  list.push('is');
+  list.push('a');
+  list.push('useless');
+  list.push('method');
+  list.push(',');
+  list.push('to');
+  list.push('make');
+  list.push('some');
+  list.push('gaps');
+  list.push('in');
+  list.push('this');
+  list.push('file');
+  list.push('!');
+  console.log(list.join(' '));
+};
+
+// ## Pet
+// direct link from index.js to Pet section is possible with HTML IDs.
 class Pet {
   name: string;
 
@@ -29,4 +51,4 @@ class Pet {
   }
 }
 
-export { Person, Pet };
+export { Person, Pet, uselessMethod };
