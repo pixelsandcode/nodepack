@@ -13,11 +13,24 @@
       <div class="toc">
         <h3>Table of Contents</h3>
         <ul>
+          <% var last = [] %>
+          <% var indent = 0 %>
           <% for (var i=0, l = sources.length; i < l; i++) { %>
+            <% var path = sources[i].split('/') %>
+            <% var filename = path.pop() %>
+            <% if (!_.isEqual(last, path)) { %>
+              <% indent = path.length %>
+              <% for (var p=0, size = indent; p < size; p++) { %>
+                <% if (path[p] !== last[p]) { %>
+                  <h4 class="<%= 'indent'+p %>"><%= path[p] %>/</h4>
+                <% } %>
+              <% } %>
+              <% last = path %>
+            <% } %>
             <% var source = sources[i]; %>
-            <li>
+            <li class="<%= 'indent'+indent %>">
               <a class="source" href="<%= relative(destination(source)) %>">
-                <%= source %>
+                <%= filename %>
               </a>
             </li>
           <% } %>

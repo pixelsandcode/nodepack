@@ -2,7 +2,7 @@
 
 <html>
 <head>
-  <title>species.js</title>
+  <title>Installation Guide</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <link rel="stylesheet" media="all" href="public/stylesheets/normalize.css" />
   <link rel="stylesheet" media="all" href="../../docco.css" />
@@ -43,7 +43,7 @@
             
             
             <li class="indent2">
-              <a class="source" href="../../misc/tutorials/installation.html">
+              <a class="source" href="installation.html">
                 installation.md
               </a>
             </li>
@@ -61,7 +61,7 @@
             
             
             <li class="indent1">
-              <a class="source" href="../index.html">
+              <a class="source" href="../../src/index.html">
                 index.js
               </a>
             </li>
@@ -81,7 +81,7 @@
             
             
             <li class="indent2">
-              <a class="source" href="species.html">
+              <a class="source" href="../../src/sub/species.html">
                 species.js
               </a>
             </li>
@@ -101,7 +101,7 @@
             
             
             <li class="indent2">
-              <a class="source" href="../utilities/logger.html">
+              <a class="source" href="../../src/utilities/logger.html">
                 logger.js
               </a>
             </li>
@@ -112,51 +112,17 @@
     <div class="page">
       <div class="header">
         
-          <h1>species.js</h1>
+          
+          <h1 id="installation-guide">Installation Guide</h1>
+<h2 id="step-1">Step 1</h2>
+<p>Download nvm from it’s website</p>
+<h2 id="step-2">Step 2</h2>
+<p>Download and install node and npm via nvm.</p>
+
+          
         
       </div>
 
-      
-        
-        <p>@flow</p>
-
-        
-          <div class='highlight'><pre>
-type PersonType = { <span class="hljs-attr">name</span>: string, <span class="hljs-attr">age</span>: number };</pre></div>
-        
-      
-        
-        <p>Person and Pet can live together and there is no pet without a person</p>
-
-        
-          <div class='highlight'><pre><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> </span>{
-  name: string;
-
-  age: number;
-
-  info() {
-    <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">${<span class="hljs-keyword">this</span>.name}</span> <span class="hljs-subst">${<span class="hljs-keyword">this</span>.age}</span>`</span>;
-  }
-
-  <span class="hljs-keyword">static</span> init({ name, age }: PersonType): Person {
-    <span class="hljs-keyword">const</span> person = <span class="hljs-keyword">new</span> Person();
-    person.name = name;
-    person.age = age;
-    <span class="hljs-keyword">return</span> person;
-  }
-}
-
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Pet</span> </span>{
-  name: string;
-
-  <span class="hljs-keyword">static</span> bark(message: string) {
-    <span class="hljs-keyword">const</span> say = <span class="hljs-string">`woof woof, <span class="hljs-subst">${message}</span>`</span>;
-    <span class="hljs-keyword">return</span> say;
-  }
-}
-
-<span class="hljs-keyword">export</span> { Person, Pet };</pre></div>
-        
       
       <div class="fleur">h</div>
     </div>
