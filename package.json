@@ -9,7 +9,7 @@
     "doc": "rm -fr ./docs && docco {src,test}/{**/*,*} README.md misc/tutorials/{**/*,*} -t ./misc/template/docco.jst -c ./misc/template/docco.css && cp -r ./misc/template/public ./docs",
     "start": "babel-node src/index.js",
     "build": "babel src/ -d lib/",
-    "test": "NODE_ENV=test nyc --reporter lcov --reporter text mocha --require babel-core/register tests/* && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "test": "NODE_ENV=test nyc --reporter lcov --reporter text mocha --require babel-core/register tests/*",
     "travis": "NODE_ENV=test nyc --reporter lcovonly --reporter text mocha --require babel-core/register tests/* && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "author": "",
