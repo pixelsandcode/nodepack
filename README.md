@@ -12,7 +12,6 @@ Sample project to show how all projects should set up:
 
 
 
-
 # Structure
 
 - src (source code of the project)
