@@ -6,7 +6,7 @@
 
   
 
-```
+```javascript
 import winston, { createLogger, format } from 'winston';
 import RollbarTransport from 'winston-transport-rollbar-3';
 
