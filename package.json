@@ -7,6 +7,7 @@
     "github-pages": "npm run doc && gh-pages-deploy",
     "flow": "flow",
     "doc": "rm -fr ./docs && docco README.md $(find {src,test,misc/tutorials} -type f) -t ./misc/template/docco.jst -c ./misc/template/docco.css && cp -r ./misc/template/public ./docs",
+    "gitbook": "rm -fr ./docs && docco -l plain-markdown README.md $(find {src,test,misc/tutorials} -type f) && find . -name \"*.html\" -exec bash -c 'mv \"$1\" \"${1%.html}\".md' - '{}' \\;",
     "start": "babel-node src/index.js",
     "build": "babel src/ -d lib/",
     "test": "NODE_ENV=test nyc --reporter lcov --reporter text mocha --require babel-core/register tests/*",
