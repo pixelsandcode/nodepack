@@ -1,169 +1,64 @@
-<!DOCTYPE html>
 
-<html>
-<head>
-  <title>logger.js</title>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <link rel="stylesheet" media="all" href="public/stylesheets/normalize.css" />
-  <link rel="stylesheet" media="all" href="../../docco.css" />
-</head>
-<body>
-  <div class="container">
-    
-      <div class="toc">
-        <h3>Table of Contents</h3>
-        <ul>
-          
-          
-          
-            
-            
-            
-            
-            <li class="indent0">
-              <a class="source" href="../../README.html">
-                README.md
-              </a>
-            </li>
-          
-            
-            
-            
-              
-              
-                
-                  <h4 class="indent0">misc/</h4>
-                
-              
-                
-                  <h4 class="indent1">tutorials/</h4>
-                
-              
-              
-            
-            
-            <li class="indent2">
-              <a class="source" href="../../misc/tutorials/installation.html">
-                installation.md
-              </a>
-            </li>
-          
-            
-            
-            
-              
-              
-                
-                  <h4 class="indent0">src/</h4>
-                
-              
-              
-            
-            
-            <li class="indent1">
-              <a class="source" href="../index.html">
-                index.js
-              </a>
-            </li>
-          
-            
-            
-            
-              
-              
-                
-              
-                
-                  <h4 class="indent1">sub/</h4>
-                
-              
-              
-            
-            
-            <li class="indent2">
-              <a class="source" href="../sub/species.html">
-                species.js
-              </a>
-            </li>
-          
-            
-            
-            
-              
-              
-                
-              
-                
-                  <h4 class="indent1">utilities/</h4>
-                
-              
-              
-            
-            
-            <li class="indent2">
-              <a class="source" href="logger.html">
-                logger.js
-              </a>
-            </li>
-          
-        </ul>
-      </div>
-    
-    <div class="page">
-      <div class="header">
-        
-          <h1>logger.js</h1>
-        
-      </div>
 
-      
-        
-        
-        
-          <div class='highlight'><pre><span class="hljs-keyword">import</span> winston, { createLogger, format } <span class="hljs-keyword">from</span> <span class="hljs-string">'winston'</span>;
-<span class="hljs-keyword">import</span> RollbarTransport <span class="hljs-keyword">from</span> <span class="hljs-string">'winston-transport-rollbar-3'</span>;</pre></div>
-        
-      
-        
-        <p>We have 2 different log strategies based on environments:</p>
-<ul>
-<li>Production: only warnings are reported to rollbar <a href="https://rollbar.com/tectual/nodepack/">https://rollbar.com/tectual/nodepack/</a></li>
-<li>Other environments : All logs are reported in console</li>
-</ul>
 
-        
-          <div class='highlight'><pre>
-<span class="hljs-keyword">const</span> rollbarConfig = {
-  <span class="hljs-attr">accessToken</span>: <span class="hljs-string">'b54e1dd5aa354dc9a57904d33634984d'</span>,
-  <span class="hljs-attr">environment</span>: process.env.NODE_ENV,
+
+
+
+  
+
+```
+import winston, { createLogger, format } from 'winston';
+import RollbarTransport from 'winston-transport-rollbar-3';
+
+
+```
+
+
+
+
+
+
+
+We have 2 different log strategies based on environments:
+* Production: only warnings are reported to rollbar https://rollbar.com/tectual/nodepack/
+* Other environments : All logs are reported in console
+
+
+  
+
+```
+
+const rollbarConfig = {
+  accessToken: 'b54e1dd5aa354dc9a57904d33634984d',
+  environment: process.env.NODE_ENV,
 };
 
-<span class="hljs-keyword">let</span> loggerInstance;
+let loggerInstance;
 
-<span class="hljs-keyword">if</span> (process.env.NODE_ENV !== <span class="hljs-string">'production'</span>) {
+if (process.env.NODE_ENV !== 'production') {
   loggerInstance = createLogger({
-    <span class="hljs-attr">transports</span>: [
-      <span class="hljs-keyword">new</span> winston.transports.Console({
-        <span class="hljs-attr">format</span>: format.combine(
-          format.timestamp({ <span class="hljs-attr">format</span>: <span class="hljs-string">'YYYY-MM-DD HH:mm:ss'</span> }),
+    transports: [
+      new winston.transports.Console({
+        format: format.combine(
+          format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
           format.simple(),
-          format.printf(<span class="hljs-function"><span class="hljs-params">info</span> =&gt;</span> <span class="hljs-string">`<span class="hljs-subst">${info.timestamp}</span> - <span class="hljs-subst">${info.level}</span>: <span class="hljs-subst">${info.message}</span>`</span>),
-          format.colorize({ <span class="hljs-attr">all</span>: <span class="hljs-literal">true</span> }),
+          format.printf(info => `${info.timestamp} - ${info.level}: ${info.message}`),
+          format.colorize({ all: true }),
         ),
       }),
     ],
   });
-} <span class="hljs-keyword">else</span> {
-  loggerInstance = createLogger({ <span class="hljs-attr">transports</span>: [<span class="hljs-keyword">new</span> RollbarTransport({ rollbarConfig })] });
+} else {
+  loggerInstance = createLogger({ transports: [new RollbarTransport({ rollbarConfig })] });
 }
 
-<span class="hljs-keyword">const</span> logger = loggerInstance;
+const logger = loggerInstance;
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> logger;</pre></div>
-        
-      
-      <div class="fleur">h</div>
-    </div>
-  </div>
-</body>
-</html>
+export default logger;
+
+
+```
+
+
+
+
